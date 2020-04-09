@@ -25,4 +25,4 @@ As a user I'd like to be able to make different sounds with
 
 
 
-## potential schema: https://discordapp.com/channels/@me/697675189298659379
+## potential schema: https://trello.com/b/3ZMomkwg/supertrio
