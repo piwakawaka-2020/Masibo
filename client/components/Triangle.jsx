@@ -1,6 +1,6 @@
 import React from 'react'
 
-class Ellipse2 extends React.Component {
+class Triangle extends React.Component {
 
     state={
         position: {
@@ -27,11 +27,13 @@ class Ellipse2 extends React.Component {
 
     clickHandler = evt => {
         
-        let audio = new Audio("/van.wav")
+        let audio = new Audio("/airplane.wav")
     //    console.log(audio)
         audio.play()
 
 }
+
+
 
     render() {
         const pos = this.state.position
@@ -41,7 +43,7 @@ class Ellipse2 extends React.Component {
         return(
             <>
                 <h2>shape2 is showing</h2>
-                <svg onClick = {() => this.clickHandler()}>   
+         <svg onClick = {() => this.clickHandler()}>   
                     <defs>
                         <linearGradient id="grad1">
                             <stop offset={gr.offset1} stopColor={`rgb(${c1.r},${c1.g},${c1.b})`} />
@@ -51,9 +53,13 @@ class Ellipse2 extends React.Component {
                     {/* create an ellipse with it's center x,y coordinates at cx, cy in normal page flow, 
                     radius is 50 on the x axis and 50 on the y axis with red fill */}
                     <ellipse cx={pos.cx} cy={pos.cy} rx={pos.rx} ry={pos.ry} fill="url(#grad1)" /> 
+                    <polygon points="220,10 300,210 170, 250, 133" 
+                 stroke= "purple" strokeWidth="1" fill="purple"/>
                 </svg>
-            </>
-        )
-    }
-}
-export default Ellipse2
+        </>
+      )
+     } 
+  
+  }
+  
+  export default Triangle
