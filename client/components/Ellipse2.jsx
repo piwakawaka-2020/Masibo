@@ -6,8 +6,8 @@ class Ellipse2 extends React.Component {
 
     state={
         //elipse coordinates and size
-            cx: 50,
-            cy: 50,
+            cx: "50%",
+            cy: 75,
             rx: 50,
             ry: 50,
         //gradient
@@ -28,8 +28,12 @@ class Ellipse2 extends React.Component {
 
     }
 
-    handleMouseMove(e) {
+    handleMouseMove = e => {
         console.log('onMouseMove', e.nativeEvent.clientX, e.nativeEvent.clientY)
+        this.setState({
+            rx: e.nativeEvent.clientX,
+            ry: (e.nativeEvent.clientY/5),
+        })
     }
 
     handleMouseLeave(e) {
@@ -42,11 +46,11 @@ class Ellipse2 extends React.Component {
 
         return(
             <>
-                <div className="divArea" height="33vh" width="100vh"
+                <div className="divArea"
                 onMouseEnter={this.handleMouseEnter}
                 onMouseMove={this.handleMouseMove}
                 onMouseLeave={this.handleMouseLeave}>
-                    <svg height="100%" width="100%">   
+                    <svg viewbox="0 0 300 400" height="100%" width="100%">   
                         <defs>
                             <linearGradient id="grad1">
                                 <stop offset={state.offset1} stopColor={`rgb(${state.c1r},${state.c1g},${state.c1b})`} />
