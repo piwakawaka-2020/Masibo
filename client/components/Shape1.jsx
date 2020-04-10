@@ -34,9 +34,11 @@ class Shape1 extends React.Component {
     if (this.state.shape === 'circle'){
         this.setState({shape: 'square'})
     } else if (this.state.shape === 'square') {
+        this.setState({shape: 'octagon'})
+    } else if (this.state.shape === 'octagon') {
         this.setState({shape: 'circle'})
     }
-}
+  }
 
    
   render(){
@@ -47,7 +49,9 @@ class Shape1 extends React.Component {
               <circle cx={50} cy={50} r={50} fill={this.state.style.backgroundColor} />
               : this.state.shape === 'square' ? 
               <rect x={0} y={0} rx={20} ry={20} fill={this.state.style.backgroundColor} width={this.state.style.width} height={this.state.style.height}/>
-              : <div>Whoops! my shape broke</div>
+              : this.state.shape === 'octagon' ?
+              <polygon points="48.0,4.8 19.2,95.04 91.2,37.44 4.8,37.44 76.8,95.04" fill={this.state.style.backgroundColor} />
+              :<div>Whoops! my shape broke</div>
           }
       </svg>
     )
