@@ -24,9 +24,13 @@ class Ellipse2 extends React.Component {
             }
         }
     }
+    clickHandler = evt => {
+        
+        let audio = new Audio("/van.wav")
 
+        audio.play()
 
-
+}
     render() {
         const pos = this.state.position
         const gr = this.state.gradient1
@@ -35,7 +39,7 @@ class Ellipse2 extends React.Component {
         return(
             <>
                 <h2>shape2 is showing</h2>
-                <svg>   
+                <svg onClick = {() => this.clickHandler()}>   
                     <defs>
                         <linearGradient id="grad1">
                             <stop offset={gr.offset1} stopColor={`rgb(${c1.r},${c1.g},${c1.b})`} />

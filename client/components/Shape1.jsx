@@ -13,6 +13,9 @@ class Shape1 extends React.Component {
   }
 
   clickHandler = evt => {
+    let audio = new Audio("/servicebell.wav")
+    //    console.log(audio)
+        audio.play()
     if (this.state.shape === 'circle'){
         this.setState({shape: 'square'})
     } else if (this.state.shape === 'square') {
@@ -24,7 +27,7 @@ class Shape1 extends React.Component {
   render(){
     return(
         <>
-      <svg onClick={this.clickHandler} >
+      <svg onClick={this.clickHandler} onClick = {() => this.clickHandler()}>
           {
               this.state.shape === 'circle' ?
               <circle cx={50} cy={50} r={30} fill={this.state.style.backgroundColor} />
