@@ -23,6 +23,7 @@ class Ellipse2 extends React.Component {
             c2b: 0,
     }
 
+
     handleMouseEnter(e) {
         console.log('onMouseEnter', e.clientX, e.clientY)
 
