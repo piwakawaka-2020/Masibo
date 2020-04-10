@@ -44,7 +44,6 @@ class Shape1 extends React.Component {
 
    
   render(){
-    console.log(pulse)
     return(
       <svg onClick={this.clickHandler} onClick = {() => this.clickHandler()}>
           {
